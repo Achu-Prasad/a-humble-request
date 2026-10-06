@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#eef1e9"><title>A Humble Request to My Teammates</title>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#eef1e9"><title>A Humble Message for My Teammates</title>
 <style>
 :root{color-scheme:light;--ink:#34463b;--pw: min(41vw,410px);--ph:540px;--duration:950ms}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:radial-gradient(ellipse at 20% 20%,#f9f7ed,transparent 55%),radial-gradient(ellipse at 90% 85%,#e0e8da,transparent 55%),#eef1e9;font-family:ui-rounded,"Aptos","Segoe UI",Arial,sans-serif}main{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:30px 0;gap:24px}button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}button:focus-visible,[tabindex]:focus-visible{outline:3px solid #718b62;outline-offset:4px}[hidden]{display:none!important}
 .scene{width:100%;overflow:hidden;padding:28px 0 40px}.book{position:relative;left:50%;margin-left:calc(-1 * var(--pw));width:calc(2 * var(--pw));height:var(--ph);perspective:2200px;transform:translateX(calc(-.5 * var(--pw)));transition:transform var(--duration) cubic-bezier(.3,.05,.2,1)}.book.open{transform:translateX(0)}
@@ -64,7 +64,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
-<article id="print-message" hidden><h1>A Humble Request to My Teammates</h1>
+<article id="print-message" hidden><h1>A Humble Message for My Teammates</h1>
 <p>Hey everyone, just a small request to help us manage the work and everyone’s time a little better.</p>
 <p>Whenever you’re wrapping up for the day or going offline, please share a quick update on whatever you worked on that day — even if it’s something small.</p>
 <p>Also, if you’re stuck on something or a task is taking longer than expected, please mention that too. That’s also a useful update. It helps me understand where support is needed, and I can either jump in, help unblock it, or bring someone else in so we can move things forward without putting too much pressure on one person.</p>
@@ -99,7 +99,7 @@ const keepsakes={"0": {"src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQ
 function keepsake(i){const item=keepsakes[i];return item?'<figure class="keepsake" data-memory="'+i+'"><img src="'+item.src+'" alt="'+item.alt+'" draggable="false"></figure>':'';}
 
 const sheets=[];
-const cover=document.createElement('div');cover.className='sheet';cover.innerHTML='<button class="face cover-front" id="cover" aria-label="Open A Humble Request to My Teammates">'+logo+'<h1>A Humble<br>Request<small>to my teammates</small></h1><span class="dedication">With care, for the way we work together.</span></button><div class="face back cover-back" role="button" tabindex="0" aria-label="Close book">'+keepsake(0)+'</div>';$('book').append(cover);sheets.push(cover);
+const cover=document.createElement('div');cover.className='sheet';cover.innerHTML='<button class="face cover-front" id="cover" aria-label="Open A Humble Message for My Teammates">'+logo+'<h1>A Humble<br>Message<small>for my teammates</small></h1><span class="dedication">With care, for the way we work together.</span></button><div class="face back cover-back" role="button" tabindex="0" aria-label="Close book">'+keepsake(0)+'</div>';$('book').append(cover);sheets.push(cover);
 pages.forEach((_,i)=>{const sheet=document.createElement('div');sheet.className='sheet';sheet.innerHTML='<section class="face front" data-page="'+i+'" role="button" tabindex="0" aria-label="'+(i===6?'Last page':'Turn to next page')+'">'+pageMarkup(i)+'</section><section class="face back" role="button" tabindex="0" aria-label="Return to page '+(i+1)+'">'+keepsake(i+1)+'</section>';$('book').append(sheet);sheets.push(sheet);});
 let position=0,busy=false;
 const dots=pages.map(()=>{const dot=document.createElement('span');dot.className='dot';$('dots').append(dot);return dot;});
